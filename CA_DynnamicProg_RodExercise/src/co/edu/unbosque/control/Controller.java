@@ -8,24 +8,24 @@ import co.edu.unbosque.view.RodView;
 
 public class Controller implements ActionListener {
 	
-	MainView gui;
-	RodView nextGui;
+	private MainView gui;
 	
 	public Controller() {
 		
+		
 		gui = new MainView();
-		nextGui = new RodView();
+		setListeners();
 		
 	}
 	
 	public void setListeners() {
 		
-		gui.getStart().addActionListener(this);
-		gui.getAbout().addActionListener(this);
-		gui.getExit().addActionListener(this);
+		gui.getMv().getStart().addActionListener(this);
+		gui.getMv().getAbout().addActionListener(this);
+		gui.getMv().getExit().addActionListener(this);
 		
-		nextGui.getRun().addActionListener(this);
-		nextGui.getBack().addActionListener(this);
+		gui.getRv().getRun().addActionListener(this);
+		gui.getRv().getBack().addActionListener(this);
 		
 	}
 	
@@ -35,9 +35,9 @@ public class Controller implements ActionListener {
 		switch (e.getActionCommand()) {
 		
 		case"INICIAR":
-			
-			gui.setVisible(false);
-			nextGui.setVisible(true);
+
+			gui.getMv().setVisible(false);
+			gui.getRv().setVisible(true);
 			
 			break;
 
