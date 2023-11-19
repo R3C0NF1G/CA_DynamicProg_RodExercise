@@ -14,6 +14,7 @@ public class RodView extends JPanel{
 	
 	private JLabel labInpN;
 	private JLabel labInpMatrix;
+	private JLabel solucionLabel;
 	private JTextField inpN;
 	private JTextArea inpMatrix;
 	private JButton run;
@@ -42,6 +43,12 @@ public class RodView extends JPanel{
 		labInpMatrix.setBounds(50, 100, 300, 30);
 		add(labInpMatrix);
 		
+		solucionLabel = new JLabel("");
+		solucionLabel.setFont(new Font("Arial", Font.ITALIC, 12));
+		solucionLabel.setForeground(Color.BLACK);
+		solucionLabel.setBounds(50, 200, 300, 30);
+		add(solucionLabel);
+		
 		inpN = new JTextField("");
 		inpN.setBounds(300, 50, 100, 30);
 		add(inpN);
@@ -68,16 +75,16 @@ public class RodView extends JPanel{
 		return inpN;
 	}
 
-	public void setInpN(JTextField inpN) {
-		this.inpN = inpN;
+	public void setInpN(String inpN) {
+		this.inpN.setText(inpN);
 	}
 
 	public JTextArea getInpMatrix() {
 		return inpMatrix;
 	}
 
-	public void setInpMatrix(JTextArea inpMatrix) {
-		this.inpMatrix = inpMatrix;
+	public void setInpMatrix(String inpMatrix) {
+		this.inpMatrix.setText(inpMatrix);
 	}
 
 	public JButton getRun() {
@@ -95,5 +102,31 @@ public class RodView extends JPanel{
 	public void setBack(JButton back) {
 		this.back = back;
 	}
+
+	public JLabel getLabInpN() {
+		return labInpN;
+	}
+
+	public void setLabInpN(JLabel labInpN) {
+		this.labInpN = labInpN;
+	}
+
+	public JLabel getLabInpMatrix() {
+		return labInpMatrix;
+	}
+
+	public void setLabInpMatrix(JLabel labInpMatrix) {
+		this.labInpMatrix = labInpMatrix;
+	}
+
+	public JLabel getSolucionLabel() {
+		return solucionLabel;
+	}
+
+	public void setSolucionLabelText(String solucionLabel) {
+		this.solucionLabel.setText(solucionLabel);
+	}
+	
+	
 	
 } 
