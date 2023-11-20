@@ -7,14 +7,22 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * Clase que representa la vista del menu para resolver el problema de corte de varillas.
+ * Extiende JPanel y proporciona una interfaz grafica para iniciar el programa o salir.
+ *
+ */
 public class MenuView extends JPanel{
 	
 	private JLabel title;
 	private JLabel subTitle;
 	private JButton start;
-	private JButton about;
 	private JButton exit;
 	
+	/**
+	 * Constructor de la clase MenuView.
+     * Configura la interfaz grafica y establece la visibilidad inicial como true.
+	 */
 	public MenuView() {
 		setLayout(null);
 		setBackground(Color.GRAY);
@@ -22,6 +30,9 @@ public class MenuView extends JPanel{
 		setVisible(true);
 	}
 	
+	/**
+	 * Configura los componentes de la interfaz grafica.
+	 */
 	public void funcionar() {
 	
 		title = new JLabel("Complejidad Algorítmica");
@@ -36,22 +47,16 @@ public class MenuView extends JPanel{
 		subTitle.setBounds(140, 100, 300, 30);
 		add(subTitle);
 		
-		start = new JButton("INICIAR");
+		start = new JButton("Iniciar");
 		start.setBackground(Color.BLACK);
 		start.setForeground(Color.WHITE);
-		start.setBounds(200, 200, 150, 30);
+		start.setBounds(200, 220, 150, 30);
 		add(start);
 		
-		about = new JButton("ACERCA DE");
-		about.setBackground(Color.BLACK);
-		about.setForeground(Color.WHITE);
-		about.setBounds(200, 250, 150, 30);
-		add(about);
-		
-		exit = new JButton("SALIR");
+		exit = new JButton("Salir");
 		exit.setBackground(Color.BLACK);
 		exit.setForeground(Color.WHITE);
-		exit.setBounds(200, 300, 150, 30);
+		exit.setBounds(200, 280, 150, 30);
 		add(exit);
 		
 	}
@@ -78,14 +83,6 @@ public class MenuView extends JPanel{
 
 	public void setStart(JButton start) {
 		this.start = start;
-	}
-
-	public JButton getAbout() {
-		return about;
-	}
-
-	public void setAbout(JButton about) {
-		this.about = about;
 	}
 
 	public JButton getExit() {

@@ -10,6 +10,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+/**
+ * Clase que representa la vista para resolver el problema de corte de varillas.
+ * Extiende JPanel y proporciona una interfaz grafica para ingresar datos y visualizar la solucion.
+ *
+ */
 public class RodView extends JPanel{
 	
 	private JLabel labInpN;
@@ -20,6 +25,11 @@ public class RodView extends JPanel{
 	private JButton run;
 	private JButton back;
 	
+	
+	/**
+	 * Constructor de la clase RodView.
+     * Configura la interfaz grafica y establece la visibilidad inicial como false.
+	 */
 	public RodView() {
 		
 		setLayout(null);
@@ -29,6 +39,9 @@ public class RodView extends JPanel{
 		
 	}
 
+	/**
+	 * Configura los componentes de la interfaz gráfica.
+	 */
 	private void execute() {
 		
 		labInpN = new JLabel("Introduzca el valor de n: ");
@@ -57,13 +70,13 @@ public class RodView extends JPanel{
 		inpMatrix.setBounds(300, 100, 150, 150);
 		add(inpMatrix);
 		
-		run = new JButton("►");
+		run = new JButton("Solucionar");
 		run.setBackground(Color.BLACK);
 		run.setForeground(Color.WHITE);
 		run.setBounds(200, 300, 150, 30);
 		add(run);
 		
-		back = new JButton("←");
+		back = new JButton("Volver");
 		back.setBackground(Color.BLACK);
 		back.setForeground(Color.WHITE);
 		back.setBounds(200, 350, 150, 30);

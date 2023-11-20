@@ -1,18 +1,21 @@
 package co.edu.unbosque.view;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Menu;
-
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 
+/**
+ * Clase que representa la vista principal de la aplicacion.
+ * Extiende JFrame y contiene las vistas RodView y MenuView. 
+ *
+ */
 public class MainView extends JFrame{
 	
 	private RodView rv;
 	private MenuView mv;
 	
+	/**
+	 * Constructor de la clase MainView.
+     * Configura la interfaz grafica y establece las propiedades iniciales.
+	 */
 	public MainView() {
 		
 		execute();
@@ -21,14 +24,15 @@ public class MainView extends JFrame{
 		setTitle("CA");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(550, 450);
-	//	getContentPane().setBackground(Color.gray);
-	//	getContentPane().setBackground(Color.decode("#002B5B"));
 		setLocationRelativeTo(null);
 		setResizable(false);
 		setVisible(true);
 		
 	}
 
+	/**
+	 * Configura las vistas RodView y MenuView dentro de la interfaz grafica.
+	 */
 	private void execute() {
 		
 		rv = new RodView();
