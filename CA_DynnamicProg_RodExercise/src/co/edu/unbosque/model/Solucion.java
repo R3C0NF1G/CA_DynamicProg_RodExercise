@@ -1,5 +1,6 @@
 package co.edu.unbosque.model;
 
+import java.util.Arrays;
 
 /**
  * 
@@ -24,20 +25,26 @@ public class Solucion {
 	 * Al final de cada iteracion del bucle principal se almacena el resultado del subproblema actual y 
 	 * si el boolean es true se almacena maxValr, se almacena precios de lo contrario.
 	 * 
-	 * @param tamaño    Tamaño total de la varilla inicial.
+	 * @param tamano    Tamaño total de la varilla inicial.
 	 * @param precios	Donde precios[i] es el precio para una varilla de tamaño (i+1).
 	 * @return			El valor maximo obtenido al cortar la varilla.
 	 */
-	public int resolverConMemorizacion(int tamaño, int[] precios) {
+	public int resolverConMemorizacion(int tamano, int[] precios) {
         // Array para memorizar res
-        int[] memo = new int[tamaño + 1];
+        int[] memo = new int[tamano + 1];
         memo[0] = 0;
 
-        for (int i = 1; i <= tamaño; i++) {
+        for (int i = 1; i <= tamano; i++) {
             int maxValor = precios[i - 1];
             boolean dividir = false;
+            
+            System.out.println("i: "+i);
+            System.out.println("Tamaño max. "+maxValor);
 
             for (int j = 1; j < i; j++) {
+            	
+            	System.out.println("j: "+j);
+            	
                 int costoTotal = precios[j - 1] + memo[i - j];
                 if (costoTotal > maxValor) {
                     maxValor = costoTotal;
@@ -49,8 +56,9 @@ public class Solucion {
             }else {
             	memo[i] = precios[i - 1];
             }
+            System.out.println(Arrays.toString(memo));
         }
-        return memo[tamaño];
+        return memo[tamano];
     }
 	
 }

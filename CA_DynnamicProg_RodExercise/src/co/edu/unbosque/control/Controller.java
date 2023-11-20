@@ -66,7 +66,7 @@ public class Controller implements ActionListener {
 			
 			try {
 				
-				int tamañoVarilla = Integer.parseInt(gui.getRv().getInpN().getText());
+				int tamanoVarilla = Integer.parseInt(gui.getRv().getInpN().getText());
 				
 				String preciosNotParsed = gui.getRv().getInpMatrix().getText();
 				String preciosSemiParsed = preciosNotParsed.replaceAll("\\s", "");
@@ -78,8 +78,8 @@ public class Controller implements ActionListener {
 				}
 				
 				//Resolver el problema
-				int maxValorPorPieza = solucion.resolverConMemorizacion(tamañoVarilla, preciosParsed);
-				if(maxValorPorPieza == preciosParsed[tamañoVarilla - 1]) {
+				int maxValorPorPieza = solucion.resolverConMemorizacion(tamanoVarilla, preciosParsed);
+				if(maxValorPorPieza == preciosParsed[tamanoVarilla - 1]) {
 					gui.getRv().setSolucionLabelText("La solucion optima es no dividir la varilla");
 				}else {
 					gui.getRv().setSolucionLabelText("El valor maximo de venta por parte es " + maxValorPorPieza);
